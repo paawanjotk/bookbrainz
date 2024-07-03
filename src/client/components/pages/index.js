@@ -19,18 +19,25 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-import * as bootstrap from 'react-bootstrap';
+import * as bootstrap from "react-bootstrap";
 
-import {faCircle, faCommentDots, faComments, faEnvelope, faListUl, faSearch, faUser} from '@fortawesome/free-solid-svg-icons';
+import {
+	faCircle,
+	faCommentDots,
+	faComments,
+	faEnvelope,
+	faListUl,
+	faSearch,
+	faUser,
+} from "@fortawesome/free-solid-svg-icons";
 
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import PropTypes from 'prop-types';
-import React from 'react';
-import RevisionsTable from './parts/revisions-table';
-import {faXTwitter} from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PropTypes from "prop-types";
+import React from "react";
+import RevisionsTable from "./parts/revisions-table";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 
-
-const {Alert, Button, Col, Container, Row} = bootstrap;
+const { Alert, Button, Col, Container, Row } = bootstrap;
 
 class IndexPage extends React.Component {
 	constructor(props) {
@@ -43,9 +50,9 @@ class IndexPage extends React.Component {
 		return (
 			<div>
 				<Alert className="text-center" variant="warning">
-					Under development — adventurous users, please test and
-					add data! Give us feedback about bugs, glitches and
-					potential improvements at {' '}
+					Under development — adventurous users, please test and add
+					data! Give us feedback about bugs, glitches and potential
+					improvements at{" "}
 					<a href="//tickets.metabrainz.org/projects/BB">
 						MetaBrainz JIRA!
 					</a>
@@ -61,8 +68,12 @@ class IndexPage extends React.Component {
 								width="500"
 							/>
 							<Row>
-								<Col lg={{offset: 2, span: 8}}>
-									<form action="/search" className="input-group input-group-lg margin-top-5" role="search">
+								<Col lg={{ offset: 2, span: 8 }}>
+									<form
+										action="/search"
+										className="input-group input-group-lg margin-top-5"
+										role="search"
+									>
 										<input
 											required
 											autoFocus="autofocus"
@@ -76,7 +87,9 @@ class IndexPage extends React.Component {
 												type="submit"
 												variant="success"
 											>
-												<FontAwesomeIcon icon={faSearch}/>
+												<FontAwesomeIcon
+													icon={faSearch}
+												/>
 											</Button>
 										</span>
 									</form>
@@ -116,17 +129,21 @@ class IndexPage extends React.Component {
 										<h4 className="contact-text">
 											Contact Us
 										</h4>
-										<div style={{
-											alignItems: 'center',
-											display: 'flex',
-											justifyContent: 'center'
-										}}
+										<div
+											style={{
+												alignItems: "center",
+												display: "flex",
+												justifyContent: "center",
+											}}
 										>
 											<FontAwesomeIcon
 												className="margin-sides-1 contact-text"
 												icon={faCircle}
 											/>
-											<a className="contact-text" href="//kiwiirc.com/nextclient/irc.libera.chat/?#bookbrainz">
+											<a
+												className="contact-text"
+												href="//kiwiirc.com/nextclient/irc.libera.chat/?#bookbrainz"
+											>
 												<FontAwesomeIcon
 													className="contact-text"
 													icon={faCommentDots}
@@ -138,7 +155,10 @@ class IndexPage extends React.Component {
 												className="margin-sides-1 contact-text"
 												icon={faCircle}
 											/>
-											<a className="contact-text" href="//community.metabrainz.org/c/bookbrainz">
+											<a
+												className="contact-text"
+												href="//community.metabrainz.org/c/bookbrainz"
+											>
 												<FontAwesomeIcon
 													className="contact-text"
 													icon={faComments}
@@ -150,19 +170,25 @@ class IndexPage extends React.Component {
 												className="margin-sides-1 contact-text"
 												icon={faCircle}
 											/>
-											<a className="contact-text" href="https://x.com/BookBrainz">
+											<a
+												className="contact-text"
+												href="https://x.com/BookBrainz"
+											>
 												<FontAwesomeIcon
 													className="contact-text"
-													icon={faXTwitter}
+													icon={faTwitter}
 													size="2x"
 												/>
-												X
+												Twitter
 											</a>
 											<FontAwesomeIcon
 												className="margin-sides-1 contact-text"
 												icon={faCircle}
 											/>
-											<a className="contact-text" href="mailto:bookbrainz@metabrainz.org">
+											<a
+												className="contact-text"
+												href="mailto:bookbrainz@metabrainz.org"
+											>
 												<FontAwesomeIcon
 													className="contact-text"
 													icon={faEnvelope}
@@ -189,7 +215,7 @@ class IndexPage extends React.Component {
 		return (
 			<Container>
 				<Row>
-					<Col lg={{offset: 2, span: 8}}>
+					<Col lg={{ offset: 2, span: 8 }}>
 						<h1 className="text-center">The Open Book Database</h1>
 						<p className="lead text-justify">
 							BookBrainz is a project to create an online database
@@ -203,7 +229,7 @@ class IndexPage extends React.Component {
 						</p>
 					</Col>
 				</Row>
-				<hr/>
+				<hr />
 				{!this.props.isLoggedIn && this.renderAboutUs()}
 				<div>
 					<RevisionsTable
@@ -212,11 +238,11 @@ class IndexPage extends React.Component {
 						showRevisionEditor={this.props.showRevisionEditor}
 					/>
 					<div className="text-center">
-						<Button
-							href="/revisions"
-							variant="primary"
-						>
-							<FontAwesomeIcon className="margin-right-0-5" icon={faListUl}/>
+						<Button href="/revisions" variant="primary">
+							<FontAwesomeIcon
+								className="margin-right-0-5"
+								icon={faListUl}
+							/>
 							See all revisions
 						</Button>
 					</div>
@@ -226,25 +252,29 @@ class IndexPage extends React.Component {
 	}
 
 	renderAboutUs() {
-		const disableSignUp = this.props.disableSignUp ? {disabled: true} : {};
+		const disableSignUp = this.props.disableSignUp
+			? { disabled: true }
+			: {};
 		return (
 			<React.Fragment>
 				<Row>
 					<Col className="text-center margin-top-4" lg={2}>
-						<FontAwesomeIcon icon={faUser} size="5x"/>
+						<FontAwesomeIcon icon={faUser} size="5x" />
 					</Col>
 					<Col lg={10}>
 						<h2>Join Us!</h2>
 						<p className="lead">
-					First off,{' '}
+							First off,{" "}
 							<a href="/about" target="blank">
-						read about us
-							</a>{' and '}
+								read about us
+							</a>
+							{" and "}
 							<a href="/contribute" target="blank">
-						how you can help
-							</a>. Then, if you think you want
-					to stick around, hit the button below to sign up
-					for a free BookBrainz account!
+								how you can help
+							</a>
+							. Then, if you think you want to stick around, hit
+							the button below to sign up for a free BookBrainz
+							account!
 						</p>
 					</Col>
 				</Row>
@@ -255,7 +285,7 @@ class IndexPage extends React.Component {
 						size="lg"
 						variant="success"
 					>
-				Register!
+						Register!
 					</Button>
 				</div>
 			</React.Fragment>
@@ -272,19 +302,18 @@ class IndexPage extends React.Component {
 	}
 }
 
-IndexPage.displayName = 'IndexPage';
+IndexPage.displayName = "IndexPage";
 IndexPage.propTypes = {
 	disableSignUp: PropTypes.bool,
 	isLoggedIn: PropTypes.bool.isRequired,
 	recent: PropTypes.array.isRequired,
 	showEntities: PropTypes.bool,
-	showRevisionEditor: PropTypes.bool
-
+	showRevisionEditor: PropTypes.bool,
 };
 IndexPage.defaultProps = {
 	disableSignUp: false,
 	showEntities: true,
-	showRevisionEditor: true
+	showRevisionEditor: true,
 };
 
 export default IndexPage;
